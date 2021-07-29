@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom';
 
-import shopItems from '../shopItems';
-
 import './Shop.css';
 
-function Shop() {
+function Shop(props) {
+    const { shopItems } = props;
     const [selectedItems, setSelectedItems] = useState(shopItems); //will be init in useEffect
     const [selectedTag, setSelectedTag] = useState('');
 
@@ -34,13 +33,13 @@ function Shop() {
                     {
                         selectedItems.map((item) => {
                             return (
-                                <div className="item">
+                                <Link to={`/Shop/products/${item.id}`} className="item">
                                     <img src={item.img} alt="" />
                                     <div className="text">
                                         <div>{item.name}</div>
                                         <div>${item.price}</div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                         })
                     }
