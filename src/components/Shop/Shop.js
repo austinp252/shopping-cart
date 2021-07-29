@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { Link } from 'react-router-dom';
 
 import shopItems from '../shopItems';
 
@@ -8,8 +10,8 @@ function Shop() {
     const [selectedItems, setSelectedItems] = useState(shopItems); //will be init in useEffect
     const [selectedTag, setSelectedTag] = useState('');
 
-    useEffect( () => {
-        if(selectedTag === '') {
+    useEffect(() => {
+        if (selectedTag === '') {
             setSelectedItems(shopItems);
         } else {
             setSelectedItems(shopItems.filter(item => item.tag === selectedTag));
@@ -20,19 +22,24 @@ function Shop() {
     return (
         <div className='shop'>
             <h1>Shop</h1>
+            <h2>Showing: {selectedTag === '' ? 'All' : selectedTag}</h2>
             <div className="shop-content">
                 <div className="filter-tags">
-                    <h2 onClick = {() => {setSelectedTag('')}}>All</h2>
-                    <h2 onClick = {() => {setSelectedTag('weights')}}>Weights</h2>
-                    <h2 onClick = {() => {setSelectedTag('apperal')}}>Apperal</h2>
-                    <h2 onClick = {() => {setSelectedTag('equipment')}}>Equipment</h2>
+                    <h2 onClick={() => { setSelectedTag('') }}>All</h2>
+                    <h2 onClick={() => { setSelectedTag('Weights') }}>Weights</h2>
+                    <h2 onClick={() => { setSelectedTag('Apperal') }}>Apperal</h2>
+                    <h2 onClick={() => { setSelectedTag('Equipment') }}>Equipment</h2>
                 </div>
                 <div className="display-items">
                     {
                         selectedItems.map((item) => {
-                            return(
+                            return (
                                 <div className="item">
-                                    {item.name}
+                                    <img src={item.img} alt="" />
+                                    <div className="text">
+                                        <div>{item.name}</div>
+                                        <div>${item.price}</div>
+                                    </div>
                                 </div>
                             )
                         })
