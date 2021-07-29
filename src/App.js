@@ -14,7 +14,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 function App() {
   const [cart, setCart] = useState([]);
 
-  const appendCart = (item) => {
+  const appendCart = (e, item) => {
+    e.preventDefault();
+    console.log(item);
     setCart(cart.concat(item))
   }
 

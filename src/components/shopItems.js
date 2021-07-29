@@ -40,11 +40,20 @@ const shopItems = [
         img: 'https://dks.scene7.com/is/image/GolfGalaxy/19SCWUSCHWNNC4BKXBKS?qlt=70&wid=1100&fmt=webp',
         tag: 'Weights'
     }, {
-        name: 'Item 7',
-        price: '',
-        desc: '',
-        img: '',
-        tag: 'Weights'
+        name: 'Bands',
+        id: 'bands',
+        price: 12.99,
+        desc: `These flat resistance band loops help build muscle stamina and strength, improve balance, expand range of motion and increase coordination.
+
+        3 progressive color-coded resistance levels: Light (Red), Medium (Black), Heavy (Gray)
+        
+        Lightweight and portable resistance bands
+        
+        Made of Latex for strength and flexibility
+        
+        9" diameter loops`,
+        img: 'https://www.big5sportinggoods.com/catalogimage/img/product/rwd/xsmall/2310_10357_0020_000_xsmall_02.jpg',
+        tag: 'Equipment'
     }, {
         name: 'Item 8',
         price: '',
