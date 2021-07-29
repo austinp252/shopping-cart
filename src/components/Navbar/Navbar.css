@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  background-color: blue;
+}
+
+.nav h1 Link {
+  color: #fff;
+  cursor: pointer;
+}
