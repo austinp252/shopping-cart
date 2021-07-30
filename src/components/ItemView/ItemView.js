@@ -14,11 +14,13 @@ function ItemView(props) {
             <div className="content">
                 <img src={item.img} alt="" />
                 <p>{item.desc}</p>
-                <form onSubmit={(e) => appendCart(e, {
-                    name: item.name,
-                    quantity: quantity,
-                    cost: quantity * item.price
-                })}>
+                <form onSubmit={(e) => {
+                    appendCart(e, {
+                        name: item.name,
+                        quantity: quantity,
+                        cost: quantity * item.price
+                    })
+                }}>
                     <div className="quantity">
                         <button onClick={
                             (e) => {
