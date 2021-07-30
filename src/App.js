@@ -13,15 +13,19 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0.00);
 
   const appendCart = (e, item) => {
     e.preventDefault();
-    console.log(item);
+    //console.log(item);
     setCart(cart.concat(item))
+    setTotal(total+item.cost);
   }
 
-  const removeFromCart = (id) => {
+  const removeFromCart = (id, cost) => {
     const newCart = cart.filter(item => item.id !== id);
+    //console.log('test', cart, newCart);
+    setTotal(total-cost);
     setCart(newCart);
   }
 
@@ -45,7 +49,7 @@ function App() {
             <ItemView getItem={getItem} appendCart={appendCart} />
           </Route>
           <Route exact path='/Cart'>
-            <Cart cart={cart} removeFromCart={removeFromCart} />
+            <Cart cart={cart} removeFromCart={removeFromCart} total={total}/>
           </Route>
         </Switch>
       </BrowserRouter>

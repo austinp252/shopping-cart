@@ -31,7 +31,7 @@ function Shop(props) {
                 </div>
                 <div className="display-items">
                     {
-                        selectedItems.map((item) => {
+                        selectedItems.map((item) => { 
                             return (
                                 <Link to={`/Shop/products/${item.id}`} className="item">
                                     <img src={item.img} alt="" />

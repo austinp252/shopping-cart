@@ -17,6 +17,7 @@ function ItemView(props) {
                 <form onSubmit={(e) => {
                     appendCart(e, {
                         name: item.name,
+                        id: item.id,
                         quantity: quantity,
                         cost: quantity * item.price
                     })

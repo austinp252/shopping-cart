@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import './Cart.css';
 
 function Cart(props) {
-    const { cart, removeFromCart } = props;
-
+    const { cart, removeFromCart, total } = props;
+    console.log('render cart:', cart);
     return (
         <div className='cart'>
             <h1>Cart</h1>
@@ -20,13 +20,13 @@ function Cart(props) {
                                 <td>{item.name}</td>
                                 <td>{item.cost}</td>
                                 <td>{item.quantity}</td>
-                                <button onClick={() => removeFromCart(item.id)}>Remove Item</button>
+                                <button onClick={() => removeFromCart(item.id, item.cost)}>Remove Item</button>
                             </tr>
                         )
                     })
                 }
             </table>
-            <div className="total">Order Total:</div>
+            <div className="total">Order Total: {total.toFixed(2)}</div>
             <button>Proceed To Checkout</button>
         </div>
     )
