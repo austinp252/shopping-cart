@@ -1,11 +1,32 @@
 .nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: #fff;
-  background-color: rgb(134, 134, 134);
+  background-color: rgb(0, 95, 30);
 }
 
-.nav h1 Link {
+.nav h1 .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.home-link {
+  font-size: 20px;
+  padding: 2px;
+  border: 2px solid #fff;
+}
+
+.shop-link {
+  border: 0;
+}
+
+.cart-link {
+  padding: 10px;
+  background-color: rgb(158, 158, 158);
+  border-radius: 50%;
 }

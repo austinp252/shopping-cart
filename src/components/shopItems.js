@@ -4,7 +4,7 @@ const shopItems = [
         id: 'adidas-mens-freeLift-sport-t-shirt',
         price: 25.00,
         desc: `Upgrade your favorite tee with the adidas® Men’s FreeLift Sport T-Shirt. Designed with climalite® material, this tee wicks sweat and dries quickly for non-stop performance. A sleek fit and additional performance-driven details help you get the most out of every workout.
-
+            
             FIT & DESIGN
             Fitted t-shirt
             Contoured fit and feel for a full range of mobility
@@ -150,5 +150,5 @@ export default shopItems;
         desc: ``,
         img: '',
         tag: 'Apperal'
-    }, 
+    },
 */

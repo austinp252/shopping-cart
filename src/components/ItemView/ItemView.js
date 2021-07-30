@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import { CgMathMinus, CgMathPlus } from 'react-icons/cg'
 import './ItemView.css';
 
 function ItemView(props) {
@@ -13,7 +13,7 @@ function ItemView(props) {
             <h1>{item.name}</h1>
             <div className="content">
                 <img src={item.img} alt="" />
-                <p>{item.desc}</p>
+                <p className='item-desc'>{item.desc}</p>
                 <form onSubmit={(e) => {
                     appendCart(e, {
                         name: item.name,
@@ -22,6 +22,7 @@ function ItemView(props) {
                         cost: quantity * item.price
                     })
                 }}>
+                    <p>Quantity</p>
                     <div className="quantity">
                         <button onClick={
                             (e) => {
@@ -30,12 +31,12 @@ function ItemView(props) {
                                     setQuantity(quantity - 1);
                                 }
                             }
-                        }>-</button>
+                        }><CgMathMinus /></button>
                         <input type="text" value={quantity} />
                         <button onClick={(e) => {
                             e.preventDefault();
                             setQuantity(quantity + 1);
-                        }}>+</button>
+                        }}><CgMathPlus /></button>
                     </div>
                     <button type='submit' disabled={
                         quantity > 0 ? false : true

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 
 function Cart(props) {
-    const { cart, removeFromCart, total, resetCart} = props;
+    const { cart, removeFromCart, total, resetCart } = props;
     console.log('render cart:', cart);
     return (
         <div className='cart'>
@@ -27,10 +27,10 @@ function Cart(props) {
                     })
                 }
             </table>
-            <div className="total">Order Total: {total.toFixed(2)}</div>
-            <Link onClick={resetCart} to={'/'} disabled={
-                cart.length > 0 ? false : true
-            }>Proceed To Checkout</Link>
+            <div className="total">Order Total: ${total.toFixed(2)}</div>
+            <Link className='link' onClick={resetCart} to={'/'}>
+                Proceed To Checkout
+            </Link>
         </div>
     )
 }

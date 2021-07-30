@@ -1,6 +1,42 @@
+.home-container {
+  position: relative;
+}
+
 .home {
+  align-items: center;
+  height: 650px;
+  filter: blur(7px);
+  background-image: url("https://www.polar.com/blog/wp-content/uploads/2019/05/8-reasons-why-youre-not-seeing-results-from-working-out-small-1.jpg");
+}
+
+.home-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  filter: none;
+  z-index: 1;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title {
+  color: #fff;
+  font-size: 30px;
+  padding: 3px;
+  border: 3px solid #fff;
+}
+
+p {
+  color: #fff;
+}
+
+.link-home {
+  margin-top: 60px;
+  padding: 10px 25px;
+  background-color: rgb(0, 95, 30);
+  color: #fff;
+  text-decoration: none;
 }

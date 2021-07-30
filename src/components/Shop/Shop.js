@@ -20,18 +20,17 @@ function Shop(props) {
 
     return (
         <div className='shop'>
-            <h1>Shop</h1>
-            <h2>Showing: {selectedTag === '' ? 'All' : selectedTag}</h2>
+            <h1 classname='shop-header'>CATELOG</h1>
             <div className="shop-content">
                 <div className="filter-tags">
-                    <h2 className = {selectedTag === '' ? 'active' : ''} onClick={() => { setSelectedTag('') }}>All</h2>
-                    <h2 className = {selectedTag === 'Weights' ? 'active' : ''} onClick={() => { setSelectedTag('Weights') }}>Weights</h2>
-                    <h2 className = {selectedTag === 'Apperal' ? 'active' : ''} onClick={() => { setSelectedTag('Apperal') }}>Apperal</h2>
-                    <h2 className = {selectedTag === 'Equipment' ? 'active' : ''} onClick={() => { setSelectedTag('Equipment') }}>Equipment</h2>
+                    <h2 className={selectedTag === '' ? 'active' : ''} onClick={() => { setSelectedTag('') }}>All</h2>
+                    <h2 className={selectedTag === 'Weights' ? 'active' : ''} onClick={() => { setSelectedTag('Weights') }}>Weights</h2>
+                    <h2 className={selectedTag === 'Apperal' ? 'active' : ''} onClick={() => { setSelectedTag('Apperal') }}>Apperal</h2>
+                    <h2 className={selectedTag === 'Equipment' ? 'active' : ''} onClick={() => { setSelectedTag('Equipment') }}>Equipment</h2>
                 </div>
                 <div className="display-items">
                     {
-                        selectedItems.map((item) => { 
+                        selectedItems.map((item) => {
                             return (
                                 <Link to={`/Shop/products/${item.id}`} className="item">
                                     <img src={item.img} alt="" />
