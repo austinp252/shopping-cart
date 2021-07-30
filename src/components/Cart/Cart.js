@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom';
 import './Cart.css';
 
 function Cart(props) {
-    const { cart, removeFromCart, total } = props;
+    const { cart, removeFromCart, total, resetCart} = props;
     console.log('render cart:', cart);
     return (
         <div className='cart'>
@@ -27,7 +28,9 @@ function Cart(props) {
                 }
             </table>
             <div className="total">Order Total: {total.toFixed(2)}</div>
-            <button>Proceed To Checkout</button>
+            <Link onClick={resetCart} to={'/'} disabled={
+                cart.length > 0 ? false : true
+            }>Proceed To Checkout</Link>
         </div>
     )
 }

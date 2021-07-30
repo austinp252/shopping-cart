@@ -37,7 +37,9 @@ function ItemView(props) {
                             setQuantity(quantity + 1);
                         }}>+</button>
                     </div>
-                    <button type='submit'>Add to cart</button>
+                    <button type='submit' disabled={
+                        quantity > 0 ? false : true
+                    }>Add to cart</button>
                 </form>
             </div>
         </div>

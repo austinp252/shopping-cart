@@ -24,10 +24,10 @@ function Shop(props) {
             <h2>Showing: {selectedTag === '' ? 'All' : selectedTag}</h2>
             <div className="shop-content">
                 <div className="filter-tags">
-                    <h2 onClick={() => { setSelectedTag('') }}>All</h2>
-                    <h2 onClick={() => { setSelectedTag('Weights') }}>Weights</h2>
-                    <h2 onClick={() => { setSelectedTag('Apperal') }}>Apperal</h2>
-                    <h2 onClick={() => { setSelectedTag('Equipment') }}>Equipment</h2>
+                    <h2 className = {selectedTag === '' ? 'active' : ''} onClick={() => { setSelectedTag('') }}>All</h2>
+                    <h2 className = {selectedTag === 'Weights' ? 'active' : ''} onClick={() => { setSelectedTag('Weights') }}>Weights</h2>
+                    <h2 className = {selectedTag === 'Apperal' ? 'active' : ''} onClick={() => { setSelectedTag('Apperal') }}>Apperal</h2>
+                    <h2 className = {selectedTag === 'Equipment' ? 'active' : ''} onClick={() => { setSelectedTag('Equipment') }}>Equipment</h2>
                 </div>
                 <div className="display-items">
                     {
@@ -35,10 +35,8 @@ function Shop(props) {
                             return (
                                 <Link to={`/Shop/products/${item.id}`} className="item">
                                     <img src={item.img} alt="" />
-                                    <div className="text">
-                                        <div>{item.name}</div>
-                                        <div>${item.price}</div>
-                                    </div>
+                                    <div>{item.name}</div>
+                                    <div>${item.price}</div>
                                 </Link>
                             )
                         })

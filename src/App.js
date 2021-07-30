@@ -34,6 +34,11 @@ function App() {
     return item[0];
   }
 
+  const resetCart = () => {
+    setCart([]);
+    setTotal(0.00);
+  }
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -49,7 +54,7 @@ function App() {
             <ItemView getItem={getItem} appendCart={appendCart} />
           </Route>
           <Route exact path='/Cart'>
-            <Cart cart={cart} removeFromCart={removeFromCart} total={total}/>
+            <Cart cart={cart} removeFromCart={removeFromCart} total={total} resetCart={resetCart}/>
           </Route>
         </Switch>
       </BrowserRouter>
