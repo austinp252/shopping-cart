@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { CgMathMinus, CgMathPlus } from 'react-icons/cg'
+import { CgMathMinus, CgMathPlus } from "react-icons/cg";
 import './ItemView.css';
 
 function ItemView(props) {
